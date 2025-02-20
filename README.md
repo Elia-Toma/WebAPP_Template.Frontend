@@ -1,50 +1,65 @@
-# React + TypeScript + Vite
+# WebAPP_Template.Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This repository provides a structured template for a React frontend application written in TypeScript. The project is set up with Vite for fast development and follows a modular and scalable architecture.
 
-Currently, two official plugins are available:
+## Features
+- React with TypeScript
+- React Router for client-side navigation
+- i18next for internationalization
+- JWT decoding for authentication handling
+- Date handling with dayjs and date-fns
+- Dependency injection with Inversify
+- TailwindCSS and React Bootstrap for styling
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Project Structure
 
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
-
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+```
+WebAPP_Template.Frontend
+└───src
+    ├───components
+    │   ├───breadcrumbs
+    │   ├───card
+    │   └───content-header
+    ├───hooks
+    ├───locales
+    │   └───it
+    ├───models
+    │   ├───dtos
+    │   └───errors
+    ├───modules
+    │   └───main
+    ├───pages
+    ├───repositories
+    │   └───abstractions
+    ├───services
+    ├───styles
+    ├───utils
+    └───views
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+## Getting Started
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+### Prerequisites
+- [Node.js](https://nodejs.org/) (Latest LTS recommended)
+- [npm](https://www.npmjs.com/) or [yarn](https://yarnpkg.com/)
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
+### Project Initialization Commands
+To create the project from scratch and install necessary dependencies, the following commands were used:
+```sh
+npm create vite@latest name-of-your-project -- --template react-ts
+
+npm install react-router-dom i18next react-i18next i18next-http-backend jwt-decode dayjs 
+
+npm install --save-dev @types/jwt-decode
+
+npm install --save-dev @types/node
+
+npm install date-fns inversify reflect-metadata --save react-bootstrap tailwindcss
 ```
+
+## Contributing
+Feel free to fork this repository and contribute improvements. Open an issue or submit a pull request for any changes.
+
+## License
+This project is licensed under the MIT License. See [LICENSE](LICENSE) for details.
+
